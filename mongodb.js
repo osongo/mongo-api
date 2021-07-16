@@ -8,8 +8,17 @@ MonngoClient.connect(connectionURL,{useNewUrlParser:true, useUnifiedTopology:tru
 			return console.log('unable to connect to database')
 		}
 		const db = client.db();
-		db.collection("users").insertOne({
-			name:"Don",
-			age:25,
-		});
+		// db.collection("users").insertOne({
+		// 	name:"Don",
+		// 	age:25,
+		// });
+		db.collection('users').insertOne({
+			name:"don otieno",
+			age:25
+		}, (err,result) => {
+			if (err) {
+				return console.log("unable to insert user");
+			}
+			console.log(result);
+		})
 	})
